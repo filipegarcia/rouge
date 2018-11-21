@@ -6,15 +6,11 @@ module Rouge
     class Swiftmessage < RegexLexer
       tag 'Swiftmessage'
       aliases 'swiftmessage', 'Swift-message'
-      filenames '*.coffee', 'Cakefile'
-      mimetypes 'text/coffeescript'
+      filenames '*.swift'
+      mimetypes 'text/swiftmessage'
 
-      title "CoffeeScript"
-      desc 'The Coffeescript programming language (coffeescript.org)'
-
-      def self.detect?(text)
-        return true if text.shebang? 'coffee'
-      end
+      title "SwiftMessage"
+      desc 'The Swift fin Messages, for MT### and MX###'
 
       def self.keywords
         @keywords ||= Set.new %w(
@@ -26,7 +22,7 @@ module Rouge
 
       def self.constants
         @constants ||= Set.new %w(
-          true false yes no on off null NaN Infinity undefined
+          USD EUR 
         )
       end
 
